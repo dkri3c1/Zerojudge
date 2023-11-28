@@ -1,4 +1,5 @@
 n=int(input())
-b=n%12
-c=int(n/12)
-print(b*5+c*50)
+arr=[]
+for i in range(n):
+    number=list(map(int,input().split()))
+print(max(number))
