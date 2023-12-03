@@ -1,17 +1,23 @@
 n=int(input())
-arr=[]
-time=[]
-wrong = 0
-for i in range(n):
-    x,y=map(int,input().split())
-    arr.append(y)
-    time.append(x)
-    if y<0:
-        wrong+=1
-times=len(time)
-ans=max(arr)-times-(wrong*2)
-t=time[arr.index(max(arr))]
-if ans<0:
-    print(0,t)
+number=list(map(int,input().split()))
+number.sort()
+
+min_score=101
+max_score=-1
+
+for j in range(len(number)):
+    print(''.join(str(number[j])),end=' ')
+print()
+for i in number:
+    if i<60:
+        max_score=max(i,max_score)
+    else:
+        min_score=min(i,min_score)
+if max_score == -1:
+    print('best case')
 else:
-    print(ans,t)
+    print(max_score)
+if min_score == 101:
+    print('worst case')
+else:
+    print(min_score)
